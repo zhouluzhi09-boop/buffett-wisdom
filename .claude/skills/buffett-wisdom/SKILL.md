@@ -75,10 +75,12 @@ triggers:
 
 | 工具类型 | 典型工具名关键词 | 你用它做什么 |
 |---------|---------------|------------|
-| **股票行情** | `yahoo-finance`, `alpha-vantage`, `market-data`, `stock-price`, `quote` | 获取当前股价、PE、PB、市值、股息率、历史价格区间 |
+| **美股/全球** | `yfinance`, `yahoo-finance`, `alpha-vantage`, `market-data`, `stock-price`, `quote` | 获取当前股价、PE、PB、市值、股息率、历史价格区间 |
+| **A股/中国** | `cn-finance`, `cn-financial`, `akshare`, `china-stock`, `tushare` | 获取A股行情、财报、估值、板块资金流、龙虎榜、新闻公告、宏观经济指标 |
 | **财务报表** | `financials`, `income-statement`, `balance-sheet`, `cash-flow`, `sec`, `edgar` | 获取ROE、负债率、自由现金流、毛利率、净利润率、留存利润增长率 |
 | **公司概况** | `company-profile`, `business-summary`, `industry` | 获取商业模式描述、行业分类、竞争对手 |
 | **市场数据** | `market-index`, `sp500`, `treasury-yield`, `interest-rate` | 获取无风险利率（用于DCF）、市场整体估值水平 |
+| **新闻/舆情** | `news`, `announcement`, `search-news` | 获取个股新闻、公司公告、关键词搜索（如"段永平 茅台"） |
 
 ### 使用规则
 
@@ -93,10 +95,15 @@ triggers:
 
 ### 推荐配置
 
-如果你希望获得最佳体验，建议配置以下 MCP 工具（任选其一）：
-- **yfinance-mcp-ts**（推荐）：`npx yfinance-mcp-ts` — 覆盖美股/港股/A股行情 + 财务报表 + 筛选器，零配置
+**美股/全球市场**（任选其一）：
+- **yfinance-mcp-ts**（推荐）：`npx yfinance-mcp-ts` — 覆盖美股/港股行情 + 财务报表，零配置
 - **Alpha Vantage MCP**：覆盖全球股票 + 外汇 + 技术指标，需要免费 API key
-- **SEC EDGAR MCP**：覆盖所有美股上市公司的原始财报文件
+
+**A股/中国市场**（任选其一）：
+- **cn-financial-mcp**（推荐）：`pip install cn-financial-mcp` — 42个工具，覆盖A股行情/财报/估值/板块/新闻/宏观，基于AKShare，零配置，无需API Key
+- **china-stock-mcp**：`uvx china-stock-mcp` — 30个工具，含30+技术指标，数据源自东方财富/新浪/雪球
+
+也可以同时配置美股和A股两个MCP，Skill会自动选择合适的工具。例如分析茅台时用cn-financial-mcp，分析可口可乐时用yfinance。
 
 ---
 
