@@ -1,4 +1,4 @@
-# 巴菲特如是说 (Buffett Wisdom)
+# 巴菲特如是说 (Thus Spoke Buffett)
 
 > 把巴菲特八十年的投资认知，压缩成一份 AI 可直接执行的决策引擎。
 >
